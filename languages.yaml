@@ -1,0 +1,28 @@
+en:
+  PLUGIN_HTML_MINIFIER:
+    CACHE:
+      LABEL: Store minified HTML in cache
+      HELP: Speeds up delivery of already visited pages
+    MODE:
+      LABEL: Compression Mode
+      HELP: >-
+        Default compresses JS and CSS but does not get the smallest size.
+        Fastest only compresses HTML. Smallest compresses everything aggressively.
+      OPTION:
+        DEFAULT: Default
+        FASTEST: Fastest
+        SMALLEST: Smallest
+nl:
+  PLUGIN_HTML_MINIFIER:
+    CACHE:
+      LABEL: Sla geminificeerde HTML op in de cache
+      HELP: Versnelt de weergrave van reeds bezochte pagina's
+    MODE:
+      LABEL: Compressie modus
+      HELP: >-
+        Standaard comprimeert JS en CSS maar levert niet de kleinste grootte.
+        Snelst comprimeert alleen HTML. Kleinst comprimeert alles agressief.
+      OPTION:
+        DEFAULT: Standaard
+        FASTEST: Snelst
+        SMALLEST: Kleinst

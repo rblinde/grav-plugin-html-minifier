@@ -1,0 +1,51 @@
+name: HTML Minifier
+slug: html-minifier
+type: plugin
+version: 1.0.0
+description: Minifies HTML output of your Grav site
+icon: search-minus
+author:
+  name: rblinde
+homepage: https://github.com/rblinde/grav-plugin-html-minifier
+keywords: grav, plugin, html, minify
+bugs: https://github.com/rblinde/grav-plugin-html-minifier/issues
+docs: https://github.com/rblinde/grav-plugin-html-minifier/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: ">=1.6.0" }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    cache:
+      type: toggle
+      label: PLUGIN_HTML_MINIFIER.CACHE.LABEL
+      help: PLUGIN_HTML_MINIFIER.CACHE.HELP
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    mode:
+      type: select
+      label: PLUGIN_HTML_MINIFIER.MODE.LABEL
+      help: PLUGIN_HTML_MINIFIER.MODE.HELP
+      size: medium
+      default: default
+      options:
+        default: PLUGIN_HTML_MINIFIER.MODE.OPTION.DEFAULT
+        fastest: PLUGIN_HTML_MINIFIER.MODE.OPTION.FASTEST
+        smallest: PLUGIN_HTML_MINIFIER.MODE.OPTION.SMALLEST
