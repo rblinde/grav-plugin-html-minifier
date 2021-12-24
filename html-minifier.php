@@ -45,11 +45,6 @@ class HTMLMinifierPlugin extends Plugin
             return;
         }
 
-        // Don't proceed if plugin is disabled
-        if (!$this->config['plugins.html-minifier.enabled']) {
-            return;
-        }
-
         // Enable the main events we are interested in
         $this->enable([
             'onOutputGenerated' => ['onOutputGenerated', 0]
