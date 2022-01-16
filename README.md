@@ -42,6 +42,16 @@ mode: # compression mode: default|fastest|smallest
 
 Note that if you use the Admin Plugin, a file with your configuration named html-minifier.yaml will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
 
+### Individual Page
+
+The default configuration can be overwritten on a per page basis. To disable caching, add the following to the frontmatter of the page:
+
+```yaml
+cache: false
+```
+
+You want to disable the cache functionality on pages which have a form. Otherwise forms can only be sent once.
+
 ## Usage
 
 After installation you can modify the plugin settings by copying and editing `html-minifier.yaml` or directly in the Admin. By default, the plugin will use the default compressor and will not store the minified HTML in cache.

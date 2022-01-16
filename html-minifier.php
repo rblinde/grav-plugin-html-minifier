@@ -56,8 +56,16 @@ class HTMLMinifierPlugin extends Plugin
      */
     public function onOutputGenerated()
     {
+        // Set config based on page, fallback to default
+        $page = $this->grav['page'];
+        $defaults = (array) $this->config->get('plugins.html-minifier');
+
+        if (isset($page->header()->html_minifier)) {
+            $this->config->set('plugins.html-minifier', array_merge($defaults, $page->header()->html_minifier));
+        }
+
         // Check if the page type is HTML
-        if ($this->grav['page']->templateFormat() !== 'html') {
+        if ($page->templateFormat() !== 'html') {
             return;
         }
 
