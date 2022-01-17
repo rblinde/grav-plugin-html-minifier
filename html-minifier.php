@@ -58,21 +58,17 @@ class HTMLMinifierPlugin extends Plugin
     {
         // Set config based on page, fallback to default
         $page = $this->grav['page'];
-        $defaults = (array) $this->config->get('plugins.html-minifier');
-
-        if (isset($page->header()->html_minifier)) {
-            $this->config->set('plugins.html-minifier', array_merge($defaults, $page->header()->html_minifier));
-        }
+        $config = $this->mergeConfig($page);
 
         // Check if the page type is HTML
         if ($page->templateFormat() !== 'html') {
             return;
         }
 
-        $compressedHtml = $this->compressHtml();
+        $compressedHtml = $this->compressHtml($config->get('mode'));
 
         // If cache is disabled, return compressed HTML
-        if (!$this->config['plugins.html-minifier.cache']) {
+        if (!$config->get('cache')) {
             $this->grav->output = $compressedHtml;
             return;
         }
@@ -98,10 +94,9 @@ class HTMLMinifierPlugin extends Plugin
      *
      * @return string compressed HTML
      */
-    private function compressHtml()
+    private function compressHtml($mode)
     {
         $html = $this->grav->output;
-        $mode = $this->config['plugins.html-minifier.mode'];
 
         if ($mode === 'smallest') {
             return Factory::constructSmallest()->compress($html);

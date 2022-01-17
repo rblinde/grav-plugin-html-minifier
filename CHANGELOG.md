@@ -1,3 +1,9 @@
+# v1.1.1
+##  01/17/2022
+
+1. [](#improved)
+    * Improved fetching config options from page.
+
 # v1.1.0
 ##  01/16/2022
 
