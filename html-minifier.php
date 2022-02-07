@@ -75,7 +75,9 @@ class HTMLMinifierPlugin extends Plugin
 
         // Check if page exists in cache
         $cache = $this->grav['cache'];
-        $cacheId = md5('html-minifier' . $this->grav['page']->id());
+
+        $paginationId = $this->grav['uri']->param('page');
+        $cacheId = md5('html-minifier' . $this->grav['page']->id() . $paginationId);
         $cachedHtml = $cache->fetch($cacheId);
 
         // Yes, return cached HTML

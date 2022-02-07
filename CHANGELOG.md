@@ -1,3 +1,9 @@
+# v1.1.2
+##  02/07/2022
+
+1. [](#improved)
+    * Correctly store paginated pages in cache.
+
 # v1.1.1
 ##  01/17/2022
 
