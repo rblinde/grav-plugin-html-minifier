@@ -68,7 +68,9 @@ class HTMLMinifierPlugin extends Plugin
         $compressedHtml = $this->compressHtml($config->get('mode'));
 
         // If cache is disabled, return compressed HTML
-        if (!$config->get('cache')) {
+        $pageCache = isset($page->header()->cache_enable) ? $page->header()->cache_enable : true;
+
+        if (!$pageCache || !$config->get('cache')) {
             $this->grav->output = $compressedHtml;
             return;
         }

@@ -1,3 +1,9 @@
+# v1.1.3
+##  02/15/2022
+
+1. [](#improved)
+    * Takes page 'cache_enable into account.
+
 # v1.1.2
 ##  02/07/2022
 
