@@ -47,13 +47,19 @@ Note that if you use the Admin Plugin, a file with your configuration named html
 The default configuration can be overwritten on a per-page basis. To disable caching, add the following to the frontmatter of the page:
 
 ```yaml
+cache_enable: false
+```
+
+or
+
+```yaml
 ---
 html-minifier:
   cache: false
 ---
 ```
 
-You want to disable the cache functionality on pages which have a form. Otherwise forms can only be sent once.
+**Important:** You'll want to disable the cache functionality on pages which have a form. Otherwise forms can only be sent once.
 
 ## Usage
 
